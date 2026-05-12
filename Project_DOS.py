@@ -61,8 +61,7 @@ footer {
 # Loading Data
 @st.cache_data
 def load_data():
-    url = "https://github.com/cpinckney-salad/PROJECT2W-COORDINATES/raw/refs/heads/main/PROJECT1%20(W:Coordinates).CSV"
-    data = pd.read_csv(url)
+    url = "https://raw.githubusercontent.com/cpinckney-salad/PROJECT2W-COORDINATES/main/PROJECT1%20(W%3ACoordinates).CSV"    data = pd.read_csv(url)
     data.columns = data.columns.str.strip().str.lower()
     
     cols = ['completion rate','retention rate','tuition','earnings 10yr',
@@ -125,7 +124,7 @@ def load_data():
 # Loading Professor Data
 @st.cache_data
 def load_rmp():
-    url = "https://github.com/cpinckney-salad/ALLRMP/raw/refs/heads/main/RMP.csv"
+    url = "https://raw.githubusercontent.com/cpinckney-salad/ALLRMP/main/RMP.csv"
     rmp = pd.read_csv(url)
     rmp.columns = rmp.columns.str.strip()
 
