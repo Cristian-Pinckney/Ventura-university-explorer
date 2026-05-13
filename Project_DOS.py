@@ -61,7 +61,8 @@ footer {
 # Loading Data
 @st.cache_data
 def load_data():
-    url = "https://raw.githubusercontent.com/cpinckney-salad/PROJECT2W-COORDINATES/main/PROJECT1%20(W%3ACoordinates).CSV"    data = pd.read_csv(url)
+    url = "https://github.com/cpinckney-salad/PROJECT2W-COORDINATES/raw/refs/heads/main/PROJECT1%20(W:Coordinates).CSV"
+    data = pd.read_csv(url)
     data.columns = data.columns.str.strip().str.lower()
     
     cols = ['completion rate','retention rate','tuition','earnings 10yr',
@@ -124,7 +125,7 @@ def load_data():
 # Loading Professor Data
 @st.cache_data
 def load_rmp():
-    url = "https://raw.githubusercontent.com/cpinckney-salad/ALLRMP/main/RMP.csv"
+    url = "https://github.com/cpinckney-salad/ALLRMP/raw/refs/heads/main/RMP.csv"
     rmp = pd.read_csv(url)
     rmp.columns = rmp.columns.str.strip()
 
@@ -183,7 +184,7 @@ school_colors = {
     'UCSB':'#002244',
 }
 
-# Metric Cards
+# Metric cards
 best_roi_row      = df.loc[df['roi'].idxmax()]
 best_rating_row   = df.loc[df['avg_rating'].idxmax()]
 lowest_tuition_row = df.loc[df['tuition'].idxmin()]
@@ -192,6 +193,9 @@ best_completion_row = df.loc[df['completion rate'].idxmax()]
 # Title
 st.markdown("""
 <h1 style="margin-bottom:6px;">Ventura County University Exploration</h1>
+ <p style="color:#94a3b8; font-size:14px; margin-top:0; margin-bottom:10px;">
+By Cristian Pinckney
+</p>           
 <p style="color:#f0f2f5; font-size:18px; margin-top:0;">
 Compare Ventura County universities by earnings, debt, and professor quality.
 <p style="color:#94a3b8; font-size:15px; margin-top:0;">
@@ -233,7 +237,6 @@ with tab_map:
         index=school_list.index(st.session_state['selected_school']),
         key='map_school_select'
     )
-    # Keep session state in sync
     st.session_state['selected_school'] = fly_to_target
 
     # Map controls row
@@ -338,10 +341,6 @@ with tab_map:
         height=700, use_container_width=True, key="map-main"
     )
     st.markdown("</div>", unsafe_allow_html=True)
-
-    if fly_to_target != "Overview (All Schools)":
-        st.info("Switch to the School Profile tab to see the full breakdown for this school.")
-
 
 # TAB 2 —School Profile
 
@@ -714,7 +713,7 @@ with tab_viz:
     st.markdown("---")
 
 
-    # ── 3.School Caomprisons (the main takeaway)
+    # 3.School Caomprisons (the main takeaway)
     st.markdown("#### School Comparisons")
 
     v_col1, v_col2, v_col3, v_col4 = st.columns([2, 2, 1, 1])
@@ -792,7 +791,7 @@ with tab_viz:
 
     st.markdown("# Rate My Professor Visuals")
 
-    #  4. Box plot (depth)
+    #  4. Box plot
     st.markdown("#### Professor Score Distribution — Box Plot")
     st.markdown("Shows the spread of individual professor scores per school (median, quartiles, outliers).")
 
@@ -882,7 +881,7 @@ with tab_viz:
     )
     st.plotly_chart(fig_hbar, use_container_width=True)
     st.caption("💡 Smaller or specialized departments often rate highest — use the school filter to find the strongest programs at a specific campus.")
-    # ── About This Project ──────────────────────────────────────────────────────
+    #About this project 
 
 st.markdown("---")
 st.markdown("""
