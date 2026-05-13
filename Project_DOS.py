@@ -192,15 +192,17 @@ best_completion_row = df.loc[df['completion rate'].idxmax()]
 
 # Title
 st.markdown("""
-<h1 style="margin-bottom:6px;">Ventura County University Exploration</h1>
- <h2 style="color:#f0f2f5; font-size:20px; margin-top:0; margin-bottom:10px;">
-By Cristian Pinckney
-</p>           
-<p style="color:#f0f2f5; font-size:18px; margin-top:0;">
-Compare Ventura County universities by earnings, debt, and professor quality.
-<p style="color:#94a3b8; font-size:15px; margin-top:0;">
-Data sourced from the U.S. Department of Education College Scorecard API and RateMyProfessor.com
-</p>
+    <div style="line-height: 1.2;">
+        <h1 style="margin-bottom: 0px; padding-bottom: 0px;">
+            Ventura County University Exploration
+        </h1>
+        <p style="color: #cbd5e1; font-size: 18px; font-weight: 500; margin-top: 0px; padding-top: 0px;">
+            By Cristian Pinckney
+        </p>
+    </div>
+    <h3 style="color: #94a3b8; font-size: 16px; font-weight: 400; margin-top: 10px;">
+        Compare Ventura County universities by earnings, debt, and professor quality.
+    </h3>
 """, unsafe_allow_html=True)
 
 # School selection
