@@ -193,7 +193,7 @@ best_completion_row = df.loc[df['completion rate'].idxmax()]
 # Title
 st.markdown("""
 <h1 style="margin-bottom:6px;">Ventura County University Exploration</h1>
- <p style="color:#94a3b8; font-size:14px; margin-top:0; margin-bottom:10px;">
+ <h2 style="color:#f0f2f5; font-size:20px; margin-top:0; margin-bottom:10px;">
 By Cristian Pinckney
 </p>           
 <p style="color:#f0f2f5; font-size:18px; margin-top:0;">
